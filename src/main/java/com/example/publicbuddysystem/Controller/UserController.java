@@ -4,6 +4,7 @@ import com.example.publicbuddysystem.Model.User;
 import com.example.publicbuddysystem.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,9 +27,11 @@ public class UserController {
         return userService.createUser(user);
     }
 
-    @GetMapping("/")
-    public List<User> getAllUsers() {
-        return userService.getAllUsers();
+    @GetMapping("/test")
+    public String getAllUsers(Model model) {
+        model.addAttribute("users", userService.getAllUsers());
+        //return userService.getAllUsers();
+        return "test";
     }
 
     @GetMapping("/{user_id}")
