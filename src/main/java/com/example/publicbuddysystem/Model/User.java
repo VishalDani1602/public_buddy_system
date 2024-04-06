@@ -1,6 +1,7 @@
 package com.example.publicbuddysystem.Model;
 
 import jakarta.persistence.*;
+
 @Entity
 @Table(name = "User")
 public class User {
@@ -9,12 +10,16 @@ public class User {
     @Column(name = "User_ID")
     private Integer userId;
 
-    @Column(name = "Email")
+    @Column(name = "Email", unique = true, nullable = false)
     private String email;
 
-    @Column(name = "Password")
+    @Column(name = "Password", nullable = false)
     private String password;
 
+    @Column(name = "Name", nullable = false)
+    private String name;
+
+    // Getters and Setters
     public Integer getUserId() {
         return userId;
     }
@@ -38,5 +43,12 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
-}
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+}

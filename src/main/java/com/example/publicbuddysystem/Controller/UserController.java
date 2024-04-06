@@ -28,10 +28,10 @@ public class UserController {
     }
 
     @GetMapping("/test")
-    public String getAllUsers(Model model) {
-        model.addAttribute("users", userService.getAllUsers());
-        //return userService.getAllUsers();
-        return "test";
+    public List<User> getAllUsers(Model model) {
+        //model.addAttribute("users", userService.getAllUsers());
+        return userService.getAllUsers();
+        //return "test";
     }
 
     @GetMapping("/{user_id}")
