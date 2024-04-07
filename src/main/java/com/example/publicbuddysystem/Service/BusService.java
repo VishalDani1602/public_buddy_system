@@ -27,4 +27,15 @@ public class BusService {
         }
         return specificBuses;
     }
+
+    public Bus getBusByNumberAndStop(int busNumber, String stop) {
+        List<Bus> buses = this.getSpecificBus(busNumber);
+
+        for (Bus bus : buses) {
+            if (bus.getStops().equals(stop)) {
+                return bus;
+            }
+        }
+        return null;
+    }
 }

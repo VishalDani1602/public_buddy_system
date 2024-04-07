@@ -33,4 +33,9 @@ public class BusController {
         return ResponseEntity.ok(bus);
 
     }
+
+    @GetMapping("/{busNumber}/{stops}")
+    public ResponseEntity<Bus> getSpecificBus(@PathVariable Integer busNumber, @PathVariable String stops) {
+        return ResponseEntity.ok(busService.getBusByNumberAndStop(busNumber, stops));
+    }
 }
