@@ -97,7 +97,7 @@
 <div class="background-image">
     <h1>The Buddy System!</h1>
     <h3>Account creation</h3>
-    <form>
+    <form id="registrationForm" method="POST">
         <label for="name">Name:</label><br>
         <input type="text" id="name" name="name" required><br>
 
@@ -113,9 +113,57 @@
         <label for="photo">Upload Photo of Gov ID:</label><br>
         <input type="file" id="photo" name="photo"><br>
 
-        <input type="submit" value="Register" onclick="window.location.href='pending.html'">
+        <input type="submit" value="Register">
     </form>
 </div>
+
+<script>
+    document.getElementById("registrationForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        // Fetching form data
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        const confirmPassword = document.getElementById("confirm_password").value;
+        const photo = document.getElementById("photo").files[0]; // Assuming only one file is allowed
+
+        // Validate password matching
+        if (password !== confirmPassword) {
+            alert("Passwords do not match!");
+            return;
+        }
+
+        var requestBody = {
+            name: name,
+            email: email,
+            password: password
+        };
+
+        var requestOptions = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(requestBody)
+        };
+        fetch("http://localhost:8080/users/create", requestOptions)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Network response was not ok");
+            }
+            return response.json();
+        })
+        .then(data => {
+            // Redirect to pending.html after successful registration
+            window.location.href = 'pending.html';
+        })
+        .catch(error => {
+            console.error("Error registering user:", error);
+            alert("Error registering user. Please try again later.");
+        });
+    });
+</script>
 
 </body>
 </html>
