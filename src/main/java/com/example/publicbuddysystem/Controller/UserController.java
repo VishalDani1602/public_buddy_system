@@ -4,7 +4,6 @@ import com.example.publicbuddysystem.Model.User;
 import com.example.publicbuddysystem.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -28,7 +27,7 @@ public class UserController {
     }
 
     @GetMapping("/allUsers")
-    public List<User> getAllUsers(Model model) {
+    public List<User> getAllUsers() {
         return userService.getAllUsers();
     }
 
