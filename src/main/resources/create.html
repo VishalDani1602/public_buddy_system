@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Buddy System</title>
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <style>
+      
+        /* CSS to center the heading */
+     	h1 {
+            margin-bottom: 40px; /* Add margin between headings */
+        }
+        body {
+      		display: flex;
+       		font-family: 'Montserrat', sans-serif; /* Use Roboto font */
+            text-align: center;
+      		display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            background-color: #0d0d0d; /* Background color */
+            color: #ffffff; /* Font color */
+        }
+        .background-image {
+            background-image: url('https://i.pinimg.com/736x/da/ae/4f/daae4fc27943765338310774569fb05c.jpg');
+            background-size: cover; /* Cover the entire element with the background image */
+            width: 500px; /* Adjust width as needed */
+            height: 400px; /* Adjust height as needed */
+            //display: flex; /* Optional: Center content vertically */
+            justify-content: center; /* Optional: Center content horizontally */
+            align-items: center; /* Optional: Center content vertically */
+      		box-sizing: border-box; 
+      		padding: 20px; /* Add padding */
+      		box-sizing: border-box; /* Include padding in element's total width/height */
+            text-align: center; 
+        }
+      
+      
+       form {
+      
+      		align-items: center;
+            max-width: 300px;
+      		max-hight: 600px
+            margin:10px auto;
+            background-color: rgba(255, 76, 0, 0.5);
+            padding: 15px;
+            border-radius: 15px;
+            //box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+      
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="file"] {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box; /* Ensure padding and border width are included in element's total width */
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #fa4c00;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* Smooth transition on hover */
+        }
+
+        input[type="submit"]:hover {
+            background-color: #d4430cff;
+        }
+      button {
+            padding: 10px 20px;
+            margin: 0 10px; /* Add margin between buttons */
+            border: none;
+            border-radius: 5px;
+            background-color: #fa4c00;
+            color: #ffffff;
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* Smooth transition on hover */
+      margin-bottom: 10px; 
+        }
+
+        button:hover {
+            background-color: #d4430cff;
+        }
+      
+      
+       </style>
+</head>
+<body>
+
+<div class="background-image">
+ <h1>The Buddy System!</h1>
+	<h3>Account creation</h3>
+  <form>
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password" required><br><br>
+
+    <label for="confirm_password">Confirm Password:</label><br>
+    <input type="password" id="confirm_password" name="confirm_password" required><br><br>
+
+    <label for="photo">Upload Photo of Gov ID:</label><br>
+    <input type="file" id="photo" name="photo"><br><br>
+
+    <button onclick="window.location.href='home.html'">Register</button>
+</form>
+  
+
+</div>
+
+	
+</body>
+</html>
