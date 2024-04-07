@@ -80,9 +80,9 @@
         }).addTo(map);
 
         function updateMarkers() {
-            var busId = localStorage.getItem('busNumber');
+            var busId = localStorage.getItem("busNumber");
 
-            fetch('http://localhost:8080/buses/busmap/${busNumber}')
+            fetch('http://localhost:8080/buses/busmap/' + busId)
                 .then(response => response.json())
                 .then(data => {
                     map.eachLayer(function (layer) {

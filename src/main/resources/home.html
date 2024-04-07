@@ -141,6 +141,7 @@
             })
             .then(data => {
                 localStorage.setItem("transitID", data.activeTransit_ID)
+                localStorage.setItem("busNumber", data.busNumber);
                 fetch("http://localhost:8080/buses/" + data.busNumber + "/" + data.start)
                     .then(busResponse => {
                         if (!busResponse.ok) {
@@ -150,7 +151,7 @@
                     })
                     .then(busData => {
                         localStorage.setItem("busID", busData.id);
-                        localStorage.setItem("busNumber", busData.busNumber);
+
                     })
                 window.location.href='inRoute.html'
             })
