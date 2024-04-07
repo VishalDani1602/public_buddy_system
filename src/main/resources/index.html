@@ -5,11 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Buddy System</title>
-     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <style>
-        /* CSS to center the heading */
      	h1 {
-            margin-bottom: 40px; /* Add margin between headings */
+            margin-bottom: 40px;
         }
        body {
             display: flex;
@@ -37,65 +36,63 @@
             border-radius: 15px;
             background-color: rgba(255, 76, 0, 0.5);
         }
-      label {
-    	display: block; /* Display labels as block elements */
-    	margin-bottom: 5px; /* Add space between labels and input fields */
-	}
-    input[type="email"], input[type="password"] {
-      width: 100%; /* Make input fields fill the width of their container */
-      padding: 10px;
-      margin-bottom: 10px;
-      border: 1px solid #ffffff; /* Add border */
-      border-radius: 150px; /* Add border radius */
-      background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
-      color: #ffffff; /* Text color */
-}
-   input[type="email"]:focus, input[type="password"]:focus {
-      border-color: #fa4c00; /* Change border color when input is focused */
-      outline: none; /* Remove default focus outline */
-}
-    
- button {
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      background-color: #fa4c00;
-      color: #ffffff;
-      cursor: pointer;
-      transition: background-color 0.3s ease; /* Smooth transition on hover */
- }
-button:hover {
-    background-color: #d4430cff;
-}
 
-button:focus {
-    outline: none; /* Remove default focus outline */
-      
-}
+        label {
+    	display: block;
+    	margin-bottom: 5px;
+	    }
+
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ffffff;
+            border-radius: 150px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+        }
+
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            border-color: #fa4c00;
+            outline: none;
+        }
+    
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #fa4c00;
+            color: #ffffff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #d4430cff;
+        }
+
+        button:focus {
+            outline: none;
+        }
     </style>
 </head>
 <body>
 
 <div class="background-image" id="user-details">
- <h1>The Buddy System!</h1>
+    <h1>The Buddy System!</h1>
+    <h2>Login</h2>
+    <form id="loginForm">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
 
-  
-  <h2>Login</h2>
-
-  <form id="loginForm">
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
-  
-      <br>
-  
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required>
-  
-      <br>
-	  
- 	<button>Login</button>
-
-  </form>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <button>Login</button>
+    </form>
     <span id="invalidLogin"></span>
 </div>
 <script>
@@ -127,7 +124,6 @@ button:focus {
             .then(data => {
                 if (data !== 0) {
                     window.location.href='home.html'
-                    //fetchUserData(data);
                 } else {
                     document.getElementById("invalidLogin").innerHTML = `
                     <p>Invalid login</p>
@@ -136,30 +132,6 @@ button:focus {
             })
     });
 
-    // Function to fetch user data
-    function fetchUserData(id) {
-        // Make a GET request to the API endpoint
-        fetch('http://localhost:8080/users/' + id)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error("Network response was not ok");
-                }
-                return response.json()
-            }) // Parse response as JSON
-            .then(data => {
-                // Display user details in the div
-                document.getElementById('user-details').innerHTML = `
-                    <h2>Welcome back, ${data.name}!</h2>
-                `;
-            })
-            .catch(error => {
-                console.error('Error fetching user data:', error);
-                document.getElementById('user-details').innerHTML = '<p>Error fetching user data</p>';
-            });
-    }
-
-    // Call fetchUserData function when the page loads
-    //button. = fetchUserData;
 </script>
 </body>
 </html>

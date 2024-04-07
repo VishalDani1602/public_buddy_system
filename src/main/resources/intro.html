@@ -7,15 +7,14 @@
     <title>The Buddy System</title>
      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <style>
-      
-        /* CSS to center the heading */
-     	h1 {
+        h1 {
             margin-bottom: 40px; /* Add margin between headings */
         }
-      p{
-      	font-size:20px
-      
-      }
+
+        p{
+      	    font-size:20px
+        }
+
         body {
             display: flex;
             justify-content: center;
@@ -42,24 +41,24 @@
             border-radius: 15px;
             background-color: rgba(255, 76, 0, 0.5);
         }
+
 	    .text-blurb {
 	    	text-align: center;
             background-color: #fa4c00;
        		background-color: rgba(255, 76, 0, 0.5);
-     
             padding: 10px;
             border-radius: 5px;
      		max-width: 300px; 
             font-size: 16px; 
       		margin: auto;
         }
-      .button-container {
-            display: flex; /* Use flexbox to arrange buttons horizontally */
-            justify-content: center; /* Center align buttons horizontally */
-            margin-top: 20px; /* Add some space between the buttons and other content */
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
         }
 
-        /* CSS for the buttons */
         .button-container button {
             padding: 20px 20px;
             margin: 0 10px; /* Add margin between buttons */
@@ -69,33 +68,27 @@
             color: #ffffff;
             cursor: pointer;
             transition: background-color 0.3s ease; /* Smooth transition on hover */
-      margin-bottom: 10px; 
-      font-size:15px
+            margin-bottom: 10px;
+            font-size:15px
         }
 
         .button-container button:hover {
-      		
-            background-color: #d4430cff;
+      		background-color: #d4430cff;
         }
- </style>
+</style>
 </head>
 <body>
 
 <div class="background-image">
- <h1>The Buddy System!</h1>
-
-  
-<div class="text-blurb">
+    <h1>The Buddy System!</h1>
+    <div class="text-blurb">
     <p>The Buddy System is a public safety initative that aims to connect commiunity memebers and create safety in numbers.</p>
-  <br>
-  <div class="button-container">
-    <!-- Button 1 redirects to page1.html -->
-    <button onclick="window.location.href='index.html'">Log in with email</button>
-    <!-- Button 2 redirects to page2.html -->
-    <button onclick="window.location.href='create.html'">Create Account</button>
+    <br>
+    <div class="button-container">
+        <button onclick="window.location.href='index.html'">Log in with email</button>
+        <button onclick="window.location.href='create.html'">Create Account</button>
+    </div>
+    </div>
 </div>
-</div>
-
-	
 </body>
 </html>
