@@ -65,9 +65,44 @@
 <div class="background-image">
     <h1>The Buddy System!</h1>
 	<p>**insert live map here*</p>
-    <p>**list here*</p>
-    <button onclick="window.location.href='home.html'">END ROUTE</button>
+    <p id="buddies">Finding buddies...</p>
+    <button onclick="closeTransit()">END ROUTE</button>
 </div>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var buddies = 0
+        const userID = localStorage.getItem("userID")
+        const busID = localStorage.getItem("busID")
+        alert("Current user ID: " + userID)
+
+        fetch("http://localhost:8080/transits/allTransits")
+            .then(response => response.json())
+            .then(data => {
+                data.forEach(transit => {
+                    if (transit.status === "Active" && !(userID == transit.user_AID)) {
+                        buddies += 1;
+                    }
+                })
+
+                document.getElementById("buddies").innerHTML = buddies + " buddies are riding the with you!"
+            })
+    })
+    function closeTransit() {
+        fetch("http://localhost:8080/transits/close/" + localStorage.getItem("transitID"), {
+            method: 'GET'
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to close active transit');
+                }
+                alert("Active Transit successfully deleted")
+            })
+            .catch(error => {
+                console.error('Error closing active transit:', error);
+            });
+        window.location.href='home.html'
+    }
+</script>
 </body>
 </html>

@@ -36,7 +36,7 @@ public class TransitController {
         return transitService.getActiveTransitById(activeTransitId);
     }
 
-    @DeleteMapping("/{activeTransit_ID}")
+    @GetMapping("/close/{activeTransit_ID}")
     public ResponseEntity<String> deleteActiveTransit(@PathVariable("activeTransit_ID") Integer activeTransitId) {
         transitService.deleteActiveTransit(activeTransitId);
         return ResponseEntity.ok("Active Transit Deleted");

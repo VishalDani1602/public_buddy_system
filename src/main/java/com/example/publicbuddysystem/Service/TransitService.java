@@ -34,6 +34,13 @@ public class TransitService {
 
     // Method to delete a specific active transit by its ID
     public void deleteActiveTransit(Integer activeTransitId) {
-        transitRepository.deleteById(activeTransitId);
+        ActiveTransit active = transitRepository.findById(activeTransitId)
+                .orElseThrow(() -> new IllegalArgumentException("Invalid ID: " + activeTransitId));
+
+        // Update the existing entry with the new data
+        active.setStatus("Closed");
+
+        // Save the updated entry back to the database
+        transitRepository.save(active);
     }
 }

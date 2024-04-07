@@ -140,6 +140,7 @@
                 return response.json();
             })
             .then(data => {
+                localStorage.setItem("transitID", data.activeTransit_ID)
                 fetch("http://localhost:8080/buses/" + data.busNumber + "/" + data.start)
                     .then(busResponse => {
                         if (!busResponse.ok) {
