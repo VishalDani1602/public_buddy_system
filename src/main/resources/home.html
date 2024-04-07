@@ -11,19 +11,36 @@
             margin-bottom: 40px; /* Add margin between headings */
         }  
       body {
-            text-align: center;
-            background-color: #0d0d0d; /* Background color */
-            color: #ffffff; /* Font color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0d0d0d;
+            color: #ffffff;
         }
+
         .background-image {
-            background-image: url('https://i.pinimg.com/736x/da/ae/4f/daae4fc27943765338310774569fb05c.jpg'); /* Sample image URL */
-            background-size: cover; /* Cover the entire element with the background image */
-            width: 500px; /* Adjust width as needed */
-            height: 400px; /* Adjust height as needed */
-            //display: flex; /* Optional: Center content vertically */
-           //justify-content: center; /* Optional: Center content horizontally */
-            //align-items: center; /* Optional: Center content vertically */
-      		
+            background-image: url('https://i.pinimg.com/736x/da/ae/4f/daae4fc27943765338310774569fb05c.jpg');
+            background-size: cover;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+            border-radius: 15px;
+            background-color: rgba(255, 76, 0, 0.5);
+        }
+
+        form {
+            max-width: 300px;
+            width: 100%;
+            padding: 15px;
         }
     </style>
 </head>
@@ -33,7 +50,7 @@
  <h1>The Buddy System!</h1>
 
     <body>
-    <div class="background-image">
+
 
         <label for="numberSelect">Choose a Bus</label>
         <br>
