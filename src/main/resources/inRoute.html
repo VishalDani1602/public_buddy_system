@@ -141,7 +141,6 @@
         var buddies = 0
         const userID = localStorage.getItem("userID")
         const busID = localStorage.getItem("busID")
-        alert("Current user ID: " + userID)
 
         fetch("http://localhost:8080/transits/allTransits")
             .then(response => response.json())
@@ -163,7 +162,6 @@
                 if (!response.ok) {
                     throw new Error('Failed to close active transit');
                 }
-                alert("Active Transit successfully deleted")
             })
             .catch(error => {
                 console.error('Error closing active transit:', error);

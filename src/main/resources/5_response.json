@@ -1,0 +1,134 @@
+[
+    {
+        "id": "5712",
+        "vehicleType": "Electric Trolley_ET40",
+        "lat": 37.782623,
+        "lon": -122.409904,
+        "jobTag": "591_M12",
+        "tripTag": "11529560_M12",
+        "scheduledAdherenceSec": 500293,
+        "scheduledHeadwaySec": 0,
+        "heading": 225,
+        "kph": 19,
+        "secsSinceReport": 61,
+        "predictable": true,
+        "breakpointing": false,
+        "route": {
+            "id": "5",
+            "name": "5 Fulton"
+        },
+        "dir": {
+            "id": "5_0_var1",
+            "dirName": "Ocean Beach",
+            "dirNameShort": "Ocean Beach"
+        },
+        "occupancyStatus": 1,
+        "occupancyDescription": "Many seats available",
+        "vehiclesInConsist": 1,
+        "linkedVehicleIds": "5712",
+        "detourId": null,
+        "gpsTime": 1712478955000,
+        "avlTime": 1712478964652,
+        "lastDepot": "potrero",
+        "vehiclePosition": {
+            "pathTag": "5_0_var1_6_5688_7563",
+            "pathIndex": 103,
+            "position": 291,
+            "currentStopTag": "7563",
+            "currentStopOrderInTripPattern": 8,
+            "atCurrentStop": false,
+            "predictionTime": 1712479033514
+        },
+        "runId": "POT457",
+        "predUsingNavigationTm": false,
+        "deadheadingBusYard": null
+    },
+    {
+        "id": "5714",
+        "vehicleType": "Electric Trolley_ET40",
+        "lat": 37.7738,
+        "lon": -122.509911,
+        "jobTag": "593_M12",
+        "tripTag": "11529701_M12",
+        "scheduledAdherenceSec": 0,
+        "scheduledHeadwaySec": 0,
+        "heading": 218,
+        "kph": 0,
+        "secsSinceReport": 57,
+        "predictable": true,
+        "breakpointing": true,
+        "route": {
+            "id": "5",
+            "name": "5 Fulton"
+        },
+        "dir": {
+            "id": "5_1_var3",
+            "dirName": "Market + 4th Street",
+            "dirNameShort": "Market + 4th Street"
+        },
+        "occupancyStatus": 0,
+        "occupancyDescription": "Empty",
+        "vehiclesInConsist": 1,
+        "linkedVehicleIds": "5714",
+        "detourId": null,
+        "gpsTime": 1712478959000,
+        "avlTime": 1712478964734,
+        "lastDepot": "potrero",
+        "vehiclePosition": {
+            "pathTag": "5_1_var3_1_path_3927",
+            "pathIndex": 81,
+            "position": 0,
+            "currentStopTag": "3927",
+            "currentStopOrderInTripPattern": 1,
+            "atCurrentStop": true,
+            "predictionTime": 1712479020000
+        },
+        "runId": "POT467",
+        "predUsingNavigationTm": false,
+        "deadheadingBusYard": null
+    },
+    {
+        "id": "5752",
+        "vehicleType": "Electric Trolley_ET40",
+        "lat": 37.78064,
+        "lon": -122.415352,
+        "jobTag": "592_M12",
+        "tripTag": "11529700_M12",
+        "scheduledAdherenceSec": 239894,
+        "scheduledHeadwaySec": 1800,
+        "heading": 120,
+        "kph": 10,
+        "secsSinceReport": 26,
+        "predictable": true,
+        "breakpointing": false,
+        "route": {
+            "id": "5",
+            "name": "5 Fulton"
+        },
+        "dir": {
+            "id": "5_1_var3",
+            "dirName": "Market + 4th Street",
+            "dirNameShort": "Market + 4th Street"
+        },
+        "occupancyStatus": 0,
+        "occupancyDescription": "Empty",
+        "vehiclesInConsist": 1,
+        "linkedVehicleIds": "5752",
+        "detourId": null,
+        "gpsTime": 1712478990000,
+        "avlTime": 1712478994554,
+        "lastDepot": "potrero",
+        "vehiclePosition": {
+            "pathTag": "5_1_var3_12_5405_5648",
+            "pathIndex": 92,
+            "position": 431,
+            "currentStopTag": "7635",
+            "currentStopOrderInTripPattern": 32,
+            "atCurrentStop": false,
+            "predictionTime": 1712479024518
+        },
+        "runId": "POT462",
+        "predUsingNavigationTm": false,
+        "deadheadingBusYard": null
+    }
+]

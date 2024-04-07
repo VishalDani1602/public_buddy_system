@@ -33,11 +33,17 @@ public class BusController {
     }
 
     @GetMapping("/busmap/{busNumber}")
-    public ResponseEntity<String> getBusMap() {
+    public ResponseEntity<String> getBusMap(@PathVariable Integer busNumber) {
         try {
             // Read content of buses.json file
-            ClassPathResource resource = new ClassPathResource("busData.json");
+            ClassPathResource resource;
+            if(busNumber == 5) {
+                resource = new ClassPathResource("5_response.json");
+            } else{
+                resource = new ClassPathResource("31_response.json");
+            }
             byte[] bytes = Files.readAllBytes(Paths.get(resource.getURI()));
+
             String jsonData = new String(bytes);
 
             // Return JSON response
