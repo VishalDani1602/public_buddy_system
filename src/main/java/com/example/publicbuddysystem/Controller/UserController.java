@@ -27,11 +27,9 @@ public class UserController {
         return userService.createUser(user);
     }
 
-    @GetMapping("/test")
+    @GetMapping("/allUsers")
     public List<User> getAllUsers(Model model) {
-        //model.addAttribute("users", userService.getAllUsers());
         return userService.getAllUsers();
-        //return "test";
     }
 
     @GetMapping("/{user_id}")
