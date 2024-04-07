@@ -16,6 +16,7 @@ public class TransitService {
     public TransitService(TransitRepository transitRepository) {
         this.transitRepository = transitRepository;
     }
+
     // Method to create a new active transit
     public ActiveTransit createActiveTransit(ActiveTransit activeTransit) {
         return transitRepository.save(activeTransit);

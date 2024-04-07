@@ -18,7 +18,7 @@ public class LoginController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<Integer> login(@RequestBody User user){
+    public ResponseEntity<Integer> login(@RequestBody User user) {
         return ResponseEntity.ok(userService.login(user));
     }
 }

@@ -29,8 +29,8 @@ public class UserService {
 
     public int login(User user) {
         List<User> userlist = userRepository.findAll();
-        for(User user1 : userlist){
-            if(user.getEmail().equals(user1.getEmail()) && passwordEncoder.matches(user.getPassword(),user1.getPassword())){
+        for (User user1 : userlist) {
+            if (user.getEmail().equals(user1.getEmail()) && passwordEncoder.matches(user.getPassword(), user1.getPassword())) {
                 return user1.getUserId();
             }
         }
@@ -42,6 +42,7 @@ public class UserService {
         users.forEach(user -> user.setPassword(null));
         return users;
     }
+
     public Optional<User> getSpecificUser(int id) {
         return userRepository.findById(id);
     }

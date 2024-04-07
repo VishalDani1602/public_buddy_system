@@ -16,7 +16,9 @@ public class BusController {
     private final BusService busService;
 
     @Autowired
-    public BusController(BusService busService) { this.busService = busService; }
+    public BusController(BusService busService) {
+        this.busService = busService;
+    }
 
     // Endpoint to retrieve all buses
     @GetMapping("/buses")

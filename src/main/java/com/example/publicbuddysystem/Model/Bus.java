@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "Bus")
 public class Bus {
-    @Column(name = "Bus_Number", nullable = false)
+    @Column(name = "busnumber", nullable = false)
     private Integer busNumber;
 
     @Column(name = "Stops", nullable = false)

@@ -11,7 +11,9 @@ import java.util.List;
 public class BusService {
     private final BusRepository busRepository;
 
-    public BusService(BusRepository busRepository) { this.busRepository = busRepository; }
+    public BusService(BusRepository busRepository) {
+        this.busRepository = busRepository;
+    }
 
     public List<Bus> getAllBuses() {
         return busRepository.findAll();
