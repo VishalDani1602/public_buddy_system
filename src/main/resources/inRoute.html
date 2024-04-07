@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Buddy System</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <style>
         h1 {
             margin-bottom: 40px; /* Add margin between headings */
         }
+
         body {
             display: flex;
             justify-content: center;
@@ -39,7 +40,7 @@
             border-radius: 15px;
             background-color: rgba(255, 76, 0, 0.5);
         }
-      
+
         p {
             max-width: 300px; /* Set maximum width */
             margin: 0 auto; /* Center the paragraph horizontally */
@@ -53,15 +54,15 @@
             background-color: #fa4c00;
             color: #ffffff;
             cursor: pointer;
-            transition: background-color 0.3s ease; 
-      		margin-top: 30px;
-      		margin-bottom: 10px; 
+            transition: background-color 0.3s ease;
+            margin-top: 30px;
+            margin-bottom: 10px;
         }
 
         button:hover {
             background-color: #d4430cff;
         }
-       </style>
+    </style>
 </head>
 <body>
 
@@ -73,73 +74,85 @@
 </div>
 <script>
 
-        var map = L.map('map').setView([37.773972, -122.451297], 13);
+    var map = L.map('map').setView([37.773972, -122.451297], 13);
 
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '<a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '<a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
 
-        function updateMarkers() {
-            var busId = localStorage.getItem("busNumber");
+    function updateMarkers() {
+        var busId = localStorage.getItem("busNumber");
 
-            fetch('http://localhost:8080/buses/busmap/' + busId)
-                .then(response => response.json())
-                .then(data => {
-                    map.eachLayer(function (layer) {
-                        if (layer instanceof L.Marker) {
-                            map.removeLayer(layer);
-                        }
-                    });
+        fetch('http://localhost:8080/buses/busmap/' + busId)
+            .then(response => response.json())
+            .then(data => {
+                map.eachLayer(function (layer) {
+                    if (layer instanceof L.Marker) {
+                        map.removeLayer(layer);
+                    }
+                });
 
-                    data.forEach(vehicle => {
-                        var lat = vehicle.lat;
-                        var lon = vehicle.lon;
-                        var marker = L.marker([lat, lon]).addTo(map);
+                data.forEach(vehicle => {
+                    var lat = vehicle.lat;
+                    var lon = vehicle.lon;
+                    var marker = L.marker([lat, lon]).addTo(map);
 
-                        var popupContent = `
-                            <b>Vehicle ID:</b> ${vehicle.id} <br>
-                            <b>Occupancy:</b> ${vehicle.occupancyDescription} <br>
-                            <b>Direction:</b> ${vehicle.dir.dirNameShort} <br>
-                        `;
+                    var popupContent = `
+                        <b>Vehicle ID:</b> ${vehicle.id}
+                    <br>
+                        <b>Occupancy:</b> ${vehicle.occupancyDescription} <br>
+`;
+
+
+                        if (vehicle.dir) {
+
+                        if (vehicle.dir.dirNameShort) {
+                        popupContent += `<b>Direction:</b> ${vehicle.dir.dirNameShort} <br>`;
+                    } else {
+                        popupContent += `<b>Direction:</b> N/A <br>`;
+                    }
+                        } else {
+                        popupContent += `<b>Direction:</b> N/A <br>`;
+                    }
 
                         marker.bindPopup(popupContent);
-                    });
+                        });
 
 
-                })
-                .catch(error => console.error('Error fetching data:', error));
-        }
+                        })
+                        .catch(error => console.error('Error fetching data:', error));
+                        }
 
-        updateMarkers();
-        showUserLocation();
-        setInterval(updateMarkers, 20000);
+                        updateMarkers();
+                        showUserLocation();
+                        setInterval(updateMarkers, 20000);
 
-        function showUserLocation() {
-            if ('geolocation' in navigator) {
-                navigator.geolocation.getCurrentPosition(position => {
-                    var userLat = position.coords.latitude;
-                    var userLon = position.coords.longitude;
+                        function showUserLocation() {
+                        if ('geolocation' in navigator) {
+                        navigator.geolocation.getCurrentPosition(position => {
+                        var userLat = position.coords.latitude;
+                        var userLon = position.coords.longitude;
 
-                    var userLocationMarker = L.circleMarker([userLat, userLon], {
+                        var userLocationMarker = L.circleMarker([userLat, userLon], {
                         radius: 5,
                         color: 'red',
                         fillColor: '#3388ff',
                         fillOpacity: 0.8
                     }).addTo(map);
 
-                }, error => {
-                    console.error('Error getting user location:', error);
-                });
-            } else {
-                console.log('Geolocation is not supported by this browser.');
-            }
-        }
-    </script>
+                    }, error => {
+                        console.error('Error getting user location:', error);
+                    });
+                    } else {
+                        console.log('Geolocation is not supported by this browser.');
+                    }
+                    }
+</script>
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
         var buddies = 0
         const userID = localStorage.getItem("userID")
-        const busID = localStorage.getItem("busID")
+        const busNumber = localStorage.getItem("busNumber")
 
         fetch("http://localhost:8080/transits/allTransits")
             .then(response => response.json())
@@ -150,9 +163,10 @@
                     }
                 })
 
-                document.getElementById("buddies").innerHTML = buddies + " buddies are riding the with you!"
+                document.getElementById("buddies").innerHTML = buddies + " buddies are riding the " + busNumber + " with you!"
             })
     })
+
     function closeTransit() {
         fetch("http://localhost:8080/transits/close/" + localStorage.getItem("transitID"), {
             method: 'GET'
@@ -165,7 +179,7 @@
             .catch(error => {
                 console.error('Error closing active transit:', error);
             });
-        window.location.href='home.html'
+        window.location.href = 'home.html'
     }
 </script>
 </body>

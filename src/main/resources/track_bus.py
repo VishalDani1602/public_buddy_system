@@ -10,7 +10,8 @@ def track_url(url):
         response = requests.get(url, headers=headers)
         data = response.json()
 
-        file_path = os.path.join("/Users/tlf/Documents/publicbuddysystem/target/classes", f"{url.split('/')[-2]}_response.json")
+
+        file_path = os.path.join("/Users/thomassorkin/Documents/public_buddy_system/target/classes", f"{url.split('/')[-2]}_response.json")
         # Write JSON data to a file
         with open(file_path, "w") as file:
             json.dump(data, file, indent=4)
