@@ -1,6 +1,7 @@
 import requests
 import json
 import time
+import os
 
 def track_url(url):
     headers = {}
@@ -9,8 +10,9 @@ def track_url(url):
         response = requests.get(url, headers=headers)
         data = response.json()
 
+        file_path = os.path.join("/Users/tlf/Documents/publicbuddysystem/target/classes", f"{url.split('/')[-2]}_response.json")
         # Write JSON data to a file
-        with open(f"{url.split('/')[-2]}_response.json", "w") as file:
+        with open(file_path, "w") as file:
             json.dump(data, file, indent=4)
 
         print(f"Data from {url} saved successfully.")
@@ -28,4 +30,4 @@ if __name__ == "__main__":
     while True:
         for url in urls:
             track_url(url)
-        time.sleep(5)
+        time.sleep(20)

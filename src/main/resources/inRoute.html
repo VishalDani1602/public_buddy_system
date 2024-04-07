@@ -67,7 +67,7 @@
 
 <div class="background-image">
     <h1>The Buddy System!</h1>
-    <div id="map" style="height: 600px; width: 500px;"></div>
+    <div id="map" style="height: 600px; width: 700px;"></div>
     <p id="buddies">Finding buddies...</p>
     <button onclick="closeTransit()">END ROUTE</button>
 </div>
@@ -76,7 +76,7 @@
         var map = L.map('map').setView([37.773972, -122.451297], 13);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            attribution: '<a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
         function updateMarkers() {
@@ -94,12 +94,11 @@
                     data.forEach(vehicle => {
                         var lat = vehicle.lat;
                         var lon = vehicle.lon;
-                        var marker = L.marker([lat, lon], { color: 'red' }).addTo(map);
+                        var marker = L.marker([lat, lon]).addTo(map);
 
                         var popupContent = `
                             <b>Vehicle ID:</b> ${vehicle.id} <br>
                             <b>Occupancy:</b> ${vehicle.occupancyDescription} <br>
-
                             <b>Direction:</b> ${vehicle.dir.dirNameShort} <br>
                         `;
 
@@ -113,7 +112,7 @@
 
         updateMarkers();
         showUserLocation();
-        setInterval(updateMarkers, 5000);
+        setInterval(updateMarkers, 20000);
 
         function showUserLocation() {
             if ('geolocation' in navigator) {

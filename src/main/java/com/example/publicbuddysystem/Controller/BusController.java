@@ -4,14 +4,18 @@ import com.example.publicbuddysystem.Model.Bus;
 import com.example.publicbuddysystem.Service.BusService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.ResourceLoader;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.Scanner;
 
 @RestController
 @RequestMapping("/buses")
@@ -20,6 +24,8 @@ public class BusController {
 
     private final BusService busService;
 
+    @Autowired
+    private ResourceLoader resourceLoader;
     @Autowired
     public BusController(BusService busService) {
         this.busService = busService;
@@ -36,15 +42,21 @@ public class BusController {
     public ResponseEntity<String> getBusMap(@PathVariable Integer busNumber) {
         try {
             // Read content of buses.json file
-            ClassPathResource resource;
+//            ClassPathResource resource;
+            Resource resource;
             if(busNumber == 5) {
-                resource = new ClassPathResource("5_response.json");
+                resource = resourceLoader.getResource("classpath:5_response.json");
             } else{
-                resource = new ClassPathResource("31_response.json");
+                resource = resourceLoader.getResource("classpath:31_response.json");
             }
-            byte[] bytes = Files.readAllBytes(Paths.get(resource.getURI()));
-
-            String jsonData = new String(bytes);
+            //Resource resource = resourceLoader.getResource("classpath:5_response.json");
+            InputStream inputStream = resource.getInputStream();
+            // Read content of the file
+            String jsonData;
+            try (Scanner scanner = new Scanner(inputStream)) {
+                jsonData = scanner.useDelimiter("\\A").next();
+            }
+            //System.out.println(jsonData);
 
             // Return JSON response
             return ResponseEntity.ok(jsonData);

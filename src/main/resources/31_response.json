@@ -1,1 +1,134 @@
-[]
+[
+    {
+        "id": "5814",
+        "vehicleType": "Electric Trolley_ET40",
+        "lat": 37.7849239,
+        "lon": -122.446815,
+        "jobTag": "3103_M23",
+        "tripTag": "11520656_M23",
+        "scheduledAdherenceSec": 0,
+        "scheduledHeadwaySec": 0,
+        "heading": 218,
+        "kph": 0,
+        "secsSinceReport": 29,
+        "predictable": true,
+        "breakpointing": true,
+        "route": {
+            "id": "31",
+            "name": "31 Balboa"
+        },
+        "dir": {
+            "id": "31_0_var1",
+            "dirName": "Ocean Beach from Turk St & Masonic Ave",
+            "dirNameShort": "Ocean Beach"
+        },
+        "occupancyStatus": 0,
+        "occupancyDescription": "Empty",
+        "vehiclesInConsist": 1,
+        "linkedVehicleIds": "5814",
+        "detourId": null,
+        "gpsTime": 1712491537000,
+        "avlTime": 1712491542364,
+        "lastDepot": "presidio",
+        "vehiclePosition": {
+            "pathTag": "31_0_var1_1_path_6724",
+            "pathIndex": 0,
+            "position": 0,
+            "currentStopTag": "6724",
+            "currentStopOrderInTripPattern": 1,
+            "atCurrentStop": false,
+            "predictionTime": 1712492100000
+        },
+        "runId": "PRE015",
+        "predUsingNavigationTm": false,
+        "deadheadingBusYard": null
+    },
+    {
+        "id": "5771",
+        "vehicleType": "Electric Trolley_ET40",
+        "lat": 37.775795,
+        "lon": -122.495506,
+        "jobTag": "3101_M23",
+        "tripTag": "11520709_M23",
+        "scheduledAdherenceSec": 107153,
+        "scheduledHeadwaySec": 0,
+        "heading": 75,
+        "kph": 29,
+        "secsSinceReport": 42,
+        "predictable": true,
+        "breakpointing": false,
+        "route": {
+            "id": "31",
+            "name": "31 Balboa"
+        },
+        "dir": {
+            "id": "31_1_var2",
+            "dirName": "Downtown",
+            "dirNameShort": "Downtown"
+        },
+        "occupancyStatus": 0,
+        "occupancyDescription": "Empty",
+        "vehiclesInConsist": 1,
+        "linkedVehicleIds": "5771",
+        "detourId": null,
+        "gpsTime": 1712491524000,
+        "avlTime": 1712491532220,
+        "lastDepot": "presidio",
+        "vehiclePosition": {
+            "pathTag": "31_1_var2_2_3927_3035",
+            "pathIndex": 6,
+            "position": 1553,
+            "currentStopTag": "3059",
+            "currentStopOrderInTripPattern": 9,
+            "atCurrentStop": false,
+            "predictionTime": 1712491542139
+        },
+        "runId": "PRE009",
+        "predUsingNavigationTm": false,
+        "deadheadingBusYard": null
+    },
+    {
+        "id": "5772",
+        "vehicleType": "Electric Trolley_ET40",
+        "lat": 37.775932,
+        "lon": -122.492889,
+        "jobTag": "3102_M23",
+        "tripTag": "11520655_M23",
+        "scheduledAdherenceSec": 39963,
+        "scheduledHeadwaySec": 1200,
+        "heading": 255,
+        "kph": 18,
+        "secsSinceReport": 11,
+        "predictable": true,
+        "breakpointing": false,
+        "route": {
+            "id": "31",
+            "name": "31 Balboa"
+        },
+        "dir": {
+            "id": "31_0_var1",
+            "dirName": "Ocean Beach from Turk St & Masonic Ave",
+            "dirNameShort": "Ocean Beach"
+        },
+        "occupancyStatus": 0,
+        "occupancyDescription": "Empty",
+        "vehiclesInConsist": 1,
+        "linkedVehicleIds": "5772",
+        "detourId": null,
+        "gpsTime": 1712491555000,
+        "avlTime": 1712491562074,
+        "lastDepot": "presidio",
+        "vehiclePosition": {
+            "pathTag": "31_0_var1_4_3034_3927_ar",
+            "pathIndex": 3,
+            "position": 2594,
+            "currentStopTag": "3060",
+            "currentStopOrderInTripPattern": 21,
+            "atCurrentStop": false,
+            "predictionTime": 1712491576372
+        },
+        "runId": "PRE023",
+        "predUsingNavigationTm": false,
+        "deadheadingBusYard": null
+    }
+]
