@@ -44,6 +44,22 @@
             width: 100%;
             padding: 15px;
         }
+      button {
+            padding: 10px 20px;
+            margin: 0 10px; /* Add margin between buttons */
+            border: none;
+            border-radius: 5px;
+            background-color: #fa4c00;
+            color: #ffffff;
+            cursor: pointer;
+            transition: background-color 0.3s ease; 
+      		margin-top: 30px;
+      		margin-bottom: 10px; 
+        }
+
+        button:hover {
+            background-color: #d4430cff;
+        }
     </style>
 </head>
 <body>
@@ -55,8 +71,8 @@
 
 
         <label for="numberSelect">Choose a Bus</label>
-        <br>
-        <br>
+      <br>
+      
         <select id="numberSelect" name="numberSelect">
             <option value="11">Choose a Bus </option>
             <option value="1">5 Inbound to Downtown </option>
@@ -70,10 +86,16 @@
             <option value="9">35 Inbound to The Castro</option>
             <option value="10">35 Outbound to Glen Park</option>
         </select>
-        <br>
-        <br>
-
-        <p id="selectedNumberDisplay"></p>
+       
+      
+       <br>
+         <p>Input stop:</p>
+        <select id="stopSelect" name="stopSelect">
+          </select>
+          
+          
+          <p>Your current time: </p>
+         <button onclick="window.location.href='enRoute.html'">Start Route</button>
 
   </form>
 </body>
