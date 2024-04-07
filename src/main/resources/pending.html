@@ -43,6 +43,28 @@
             max-width: 300px;
             margin: 0 auto;
         }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .button-container button {
+            padding: 20px 20px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #fa4c00;
+            color: #ffffff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-bottom: 10px;
+            font-size:15px
+        }
+
+        .button-container button:hover {
+      		background-color: #d4430cff;
+        }
       
        </style>
 </head>
@@ -50,7 +72,10 @@
 
 <div class="background-image">
     <h1>The Buddy System!</h1>
-	<p>Your account application is awaiting verification. You will recive an email when your account is approved for use. </p>
+	<p>Your account application is awaiting verification. You will receive an email when your account is approved for use. </p>
+    <div class="button-container">
+        <button onclick="window.location.href='index.html'">Login Page</button>
+    </div>
 </div>
 </body>
 </html>
