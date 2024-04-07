@@ -1,0 +1,221 @@
+[
+    {
+        "id": "7212",
+        "vehicleType": "Electric Trolley_TC60",
+        "lat": 37.780426,
+        "lon": -122.418282,
+        "jobTag": "504_M12",
+        "tripTag": "11529555_M12",
+        "scheduledAdherenceSec": 49109,
+        "scheduledHeadwaySec": 1140,
+        "heading": 255,
+        "kph": 8,
+        "secsSinceReport": 18,
+        "predictable": true,
+        "breakpointing": false,
+        "route": {
+            "id": "5",
+            "name": "5 Fulton"
+        },
+        "dir": {
+            "id": "5_0_var1",
+            "dirName": "Ocean Beach",
+            "dirNameShort": "Ocean Beach"
+        },
+        "occupancyStatus": 1,
+        "occupancyDescription": "Many seats available",
+        "vehiclesInConsist": 1,
+        "linkedVehicleIds": "7212",
+        "detourId": null,
+        "gpsTime": 1712471579000,
+        "avlTime": 1712471586882,
+        "lastDepot": "potrero",
+        "vehiclePosition": {
+            "pathTag": "5_0_var1_8_7563_5404",
+            "pathIndex": 336,
+            "position": 556,
+            "currentStopTag": "5404",
+            "currentStopOrderInTripPattern": 11,
+            "atCurrentStop": false,
+            "predictionTime": 1712471653484
+        },
+        "runId": "POT453",
+        "predUsingNavigationTm": false,
+        "deadheadingBusYard": null
+    },
+    {
+        "id": "7268",
+        "vehicleType": "Electric Trolley_TC60",
+        "lat": 37.775383,
+        "lon": -122.449448,
+        "jobTag": "503_M12",
+        "tripTag": "11529696_M12",
+        "scheduledAdherenceSec": 285504,
+        "scheduledHeadwaySec": 1200,
+        "heading": 95,
+        "kph": 0,
+        "secsSinceReport": 31,
+        "predictable": true,
+        "breakpointing": false,
+        "route": {
+            "id": "5",
+            "name": "5 Fulton"
+        },
+        "dir": {
+            "id": "5_1_var2",
+            "dirName": "Transit Center",
+            "dirNameShort": "Transit Center"
+        },
+        "occupancyStatus": 1,
+        "occupancyDescription": "Many seats available",
+        "vehiclesInConsist": 1,
+        "linkedVehicleIds": "7268",
+        "detourId": null,
+        "gpsTime": 1712471566000,
+        "avlTime": 1712471575896,
+        "lastDepot": "potrero",
+        "vehiclePosition": {
+            "pathTag": "5_1_var2_6_4733_4230",
+            "pathIndex": 338,
+            "position": 1294,
+            "currentStopTag": "4226",
+            "currentStopOrderInTripPattern": 22,
+            "atCurrentStop": true
+        },
+        "runId": "POT447",
+        "predUsingNavigationTm": false,
+        "deadheadingBusYard": null
+    },
+    {
+        "id": "5712",
+        "vehicleType": "Electric Trolley_ET40",
+        "lat": 37.787132,
+        "lon": -122.403839,
+        "jobTag": "591_M12",
+        "tripTag": "11529695_M12",
+        "scheduledAdherenceSec": 279524,
+        "scheduledHeadwaySec": 1140,
+        "heading": 30,
+        "kph": 19,
+        "secsSinceReport": 16,
+        "predictable": true,
+        "breakpointing": false,
+        "route": {
+            "id": "5",
+            "name": "5 Fulton"
+        },
+        "dir": {
+            "id": "5_1_var2",
+            "dirName": "Transit Center",
+            "dirNameShort": "Transit Center"
+        },
+        "occupancyStatus": 1,
+        "occupancyDescription": "Many seats available",
+        "vehiclesInConsist": 1,
+        "linkedVehicleIds": "5712",
+        "detourId": null,
+        "gpsTime": 1712471581000,
+        "avlTime": 1712471586159,
+        "lastDepot": "potrero",
+        "vehiclePosition": {
+            "pathTag": "5_1_var2_16_5642_7914_ar",
+            "pathIndex": 60,
+            "position": 93,
+            "currentStopTag": "5641",
+            "currentStopOrderInTripPattern": 37,
+            "atCurrentStop": false,
+            "predictionTime": 1712471602411
+        },
+        "runId": "POT457",
+        "predUsingNavigationTm": false,
+        "deadheadingBusYard": null
+    },
+    {
+        "id": "5714",
+        "vehicleType": "Electric Trolley_ET40",
+        "lat": 37.774868,
+        "lon": -122.454239,
+        "jobTag": "593_M12",
+        "tripTag": "11529554_M12",
+        "scheduledAdherenceSec": 489526,
+        "scheduledHeadwaySec": 1140,
+        "heading": 261,
+        "kph": 0,
+        "secsSinceReport": 72,
+        "predictable": true,
+        "breakpointing": false,
+        "route": {
+            "id": "5",
+            "name": "5 Fulton"
+        },
+        "dir": {
+            "id": "5_0_var1",
+            "dirName": "Ocean Beach",
+            "dirNameShort": "Ocean Beach"
+        },
+        "occupancyStatus": 2,
+        "occupancyDescription": "Few seats available",
+        "vehiclesInConsist": 1,
+        "linkedVehicleIds": "5714",
+        "detourId": null,
+        "gpsTime": 1712471525000,
+        "avlTime": 1712471535903,
+        "lastDepot": "potrero",
+        "vehiclePosition": {
+            "pathTag": "5_0_var1_14_4229_4732",
+            "pathIndex": 39,
+            "position": 698,
+            "currentStopTag": "4236",
+            "currentStopOrderInTripPattern": 21,
+            "atCurrentStop": false,
+            "predictionTime": 1712471540013
+        },
+        "runId": "POT467",
+        "predUsingNavigationTm": false,
+        "deadheadingBusYard": null
+    },
+    {
+        "id": "5752",
+        "vehicleType": "Electric Trolley_ET40",
+        "lat": 37.773701,
+        "lon": -122.509903,
+        "jobTag": "592_M12",
+        "tripTag": "11529697_M12",
+        "scheduledAdherenceSec": 0,
+        "scheduledHeadwaySec": 1140,
+        "heading": 218,
+        "kph": 0,
+        "secsSinceReport": 41,
+        "predictable": true,
+        "breakpointing": true,
+        "route": {
+            "id": "5",
+            "name": "5 Fulton"
+        },
+        "dir": {
+            "id": "5_1_var2",
+            "dirName": "Transit Center",
+            "dirNameShort": "Transit Center"
+        },
+        "occupancyStatus": 0,
+        "occupancyDescription": "Empty",
+        "vehiclesInConsist": 1,
+        "linkedVehicleIds": "5752",
+        "detourId": null,
+        "gpsTime": 1712471556000,
+        "avlTime": 1712471565781,
+        "lastDepot": "potrero",
+        "vehiclePosition": {
+            "pathTag": "5_1_var2_1_path_3927",
+            "pathIndex": 45,
+            "position": 0,
+            "currentStopTag": "3927",
+            "currentStopOrderInTripPattern": 1,
+            "atCurrentStop": true,
+            "predictionTime": 1712471700000
+        },
+        "runId": "POT462",
+        "predUsingNavigationTm": false,
+        "deadheadingBusYard": null
+    }
+]

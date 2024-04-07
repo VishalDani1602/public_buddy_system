@@ -32,7 +32,7 @@ public class BusController {
         return ResponseEntity.ok(buses);
     }
 
-    @GetMapping("/busmap")
+    @GetMapping("/busmap/{busNumber}")
     public ResponseEntity<String> getBusMap() {
         try {
             // Read content of buses.json file

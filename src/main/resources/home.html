@@ -150,6 +150,7 @@
                     })
                     .then(busData => {
                         localStorage.setItem("busID", busData.id);
+                        localStorage.setItem("busNumber", busData.busNumber);
                     })
                 window.location.href='inRoute.html'
             })
