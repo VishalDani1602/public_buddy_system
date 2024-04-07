@@ -71,10 +71,10 @@
     <form id="startTransit">
         <label for="numberSelect">Choose a Bus</label>
         <select id="numberSelect" name="numberSelect">
-            <option value="5">5</option>
-            <option value="15">15</option>
-            <option value="25">25</option>
-            <option value="35">35</option>
+            <option value=5>5</option>
+            <option value=15>15</option>
+            <option value=25>25</option>
+            <option value=35>35</option>
         </select>
 
 
@@ -93,19 +93,47 @@
         event.preventDefault();
 
         var bus = document.getElementById("numberSelect").value;
-        var stop = document.getElementById("stopSelect").value;
-        fetch("http://localhost:8080/buses/" + bus)
+        var start = document.getElementById("stopSelect").value;
+        const userID = localStorage.getItem("userID")
+
+        var requestBody = {
+            user_AID: userID,
+            busNumber: bus,
+            start: start,
+            status: "Active",
+            time: new Date()
+        };
+
+        var requestOptions = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(requestBody)
+        };
+
+        fetch("http://localhost:8080/transits/create", requestOptions)
             .then(response => {
                 if (!response.ok) {
                     throw new Error("Network response was not ok");
                 }
-                console.log("Got here...");
                 return response.json();
             })
             .then(data => {
-                alert(${data.busNumber});
-                window.location.href = 'inRoute.html';
+                fetch("http://localhost:8080/buses/" + data.busNumber + "/" + data.start)
+                    .then(busResponse => {
+                        if (!busResponse.ok) {
+                            throw new Error("Network response was not ok");
+                        }
+                        return busResponse.json();
+                    })
+                    .then(busData => {
+                        localStorage.setItem("busID", busData.id);
+                    })
+                window.location.href='inRoute.html'
             })
     });
+
+
 </script>
 </html>

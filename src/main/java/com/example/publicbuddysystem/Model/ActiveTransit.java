@@ -12,9 +12,8 @@ public class ActiveTransit {
     @Column(name = "activetransit_id")
     private Integer activeTransit_ID;
 
-    @ManyToOne
-    @JoinColumn(name = "User_AID", referencedColumnName = "User_ID")
-    private User user;
+    @Column(name = "User_AID")
+    private Integer user_AID;
 
     @Column(name = "Bus_Number")
     private Integer busNumber;
@@ -36,12 +35,12 @@ public class ActiveTransit {
         this.activeTransit_ID = activeTransit_ID;
     }
 
-    public User getUser() {
-        return user;
+    public Integer getUser_AID() {
+        return user_AID;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUser_AID(Integer user_AID) {
+        this.user_AID = user_AID;
     }
 
     public Integer getBusNumber() {
